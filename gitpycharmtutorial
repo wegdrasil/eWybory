@@ -1,0 +1,104 @@
+=============================================================================================================================================
+Git + PyCharm tutorial by Rafał Romanowski
+=============================================================================================================================================
+
+BEZMYŚLNE UŻYWANIE GIT'A GROZI UTRATĄ PRACY CAŁEJ GRUPY
+JEŚLI NIE JESTEŚ PEWIEN CO ROBISZ, NIE RÓB TEGO!
+LEPIEJ ZAPYTAJ SIĘ RAFAŁA
+
+=============================================================================================================================================
+
+	1. Sklonowanie Projektu
+
+	Projekt jest już na GitHub'ie, musiecie go pobrać do waszych lokalnych repozytoriów
+
+	Włączcie PyCharm PROFFESIONAL edition 3.0
+	[dla nie ogarniętych przypominam, że PyCharm Community Edition nie wspiera Django]
+	[oczywiście trzeba jeszcze mieć pythona 3.3]
+
+	Jeśli od razu pojawi się kreator projektu, to zróbcie coś takiego:
+
+		Quick Start:
+			-> Check out from Version Control
+			-> GitHub
+				[Master password ->cancel, nie wiem o co chodzi z tymi hasłami, zignorujcie to]
+				[zalogujcie się do github'a]
+			-> Git Repository URL:
+				https://github.com/wegdrasil/eWybory.git
+			-> Uzupełnijcie Parent Diretory i Directory Name, tak jak chcecie
+			-> Clone
+
+
+	Jeśli macie uruchomiony jakiś projekt w PyCharm'ie, to go zamknijcie, a uruchomi się kreator projektu
+
+		File -> Close Project
+
+=============================================================================================================================================
+
+	2. Test django
+
+	Jeśli wszystko poszło dobrze, to powinniście uruchomić stronę
+
+		Tools -> Run manage.py -> runserver
+
+		Chrome/Firefox: http://127.0.0.1:8000/
+
+	Projekt nazywa się eWybory, a aplikacja Poll
+
+=============================================================================================================================================
+
+	3. Podstawowe komendy
+
+		commit:
+			Zatwierdzenie dokonanych zmian, w lokalnym repo, jeszcze nie wysyłacie zmian na GitHub [czyli bez push'a]
+
+			VS -> Commit Changes -> Commit
+
+			[jest taka zasada, że każdy commit trzeba zkomentować, w komentarzu postarajcie się zawrzeć krótkie podsumowanie waszych zmian]
+
+		push:
+			Wysłanie na GitHub commit'ów, może być ich kilka, wasze zmiany będą udostępnione wszystkim
+
+			VSC -> Git -> Push -> Push
+
+
+		pull:
+			Pobranie z GitHub'a zmian dokonanych przez innych, akulaizacja projektu
+
+			VSC -> Update project [?Merge?]
+			ALBO
+			VSC -> Git -> Pull
+
+		[tutaj nie jestem pewien której opcji powinniśmy używać, pewnie pierwszej, z pullem jest problem, bo trzeba robić merge]
+
+		Co to jest merge?
+		    Wiki: http://pl.wikipedia.org/wiki/Scalanie_(system_kontroli_wersji)
+
+			Operacja, która pozwala na połączenie wielu zmian wykonanych na zbiorze plików będących pod kontrolą systemu.
+			Jest ona potrzebna najczęściej w przypadku, gdy dwie osoby z dwóch różnych komputerów zmodyfikują plik w tym samym czasie.
+
+=============================================================================================================================================
+	4. Zadanie
+
+		Dla pewności, że wszyscy potrafią robić commit'y i push'e, niech każdy:
+			(1) Stworzy plik [twoje imie].py
+			(2) Wpiszcie jakiś komentarz
+			(3) Zrobi commit'a
+			(4) Zrobi push'a [na master branch [aby nie komplikować, projekt będzie tylko na master branch'u]]
+
+		Zróbcie równierz pull'a, tak aby każdy miał w lokalnym repo, pliki z komentarzem współpracowników.
+
+		Ja oczywiście oleje te zadanie, ponieważ umiem robić commit, push i pull. :P
+
+=============================================================================================================================================
+
+http://pl.wikipedia.org/wiki/System_kontroli_wersji
+https://github.com/
+http://www.jetbrains.com/pycharm/
+http://pl.wikipedia.org/wiki/Git_%28oprogramowanie%29
+http://git-scm.com/
+
+mój github:
+https://github.com/wegdrasil
+
+=============================================================================================================================================
