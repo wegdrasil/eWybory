@@ -82,3 +82,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "templates"),
+)
+
+#rafal says:
+#only for sake of simplicity and only for development
+#in production do sth else
+if DEBUG:
+    MEDIA_URL = '/media/'
+    STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static-only")
+    MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "media")
+    STATICFILES_DIRS = (
+        os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static"),
+    )
