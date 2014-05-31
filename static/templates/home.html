@@ -24,5 +24,23 @@
 {#        <a class='btn btn-primary btn-lg' href='{% url "user_login" %}'>Zaloguj</a>#}
 {#    <div></div>#}
 
-</div>
+{#</div>#}
+
+     <img src="/static/images/Logo.jpg"/>
+
+          {% if Poll %}
+        <ul>
+        {% for Poll in Poll %}
+          <li>{{ Poll.question }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+
+
+
+
+
 {% endblock %}
