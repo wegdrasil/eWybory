@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
 {%  block content %}
-<h1>Join now!</h1>
-<form method='POST' action=''> {% csrf_token %}
-    {{ form.as_p }}
-    <input type='submit'>
-</form>
+     <div class="row">
+        <div class="col-sm-6 col-sm-offset-7">
+
+        <h1>Sign up</h1>
+        <form method='POST' action=''> {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' class='btn btn-primary btn-lg'>
+        </form>
+
+        </div>
+
+    <div class="col-sm-6 col-sm-offset-1">
+        <a class='btn btn-primary btn-lg' href='{% url "createpoll" %}'>Create Poll</a>
+    <div></div>
+</div>
 {% endblock %}
