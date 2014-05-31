@@ -2,7 +2,7 @@ from django.shortcuts import render, render_to_response, RequestContext, HttpRes
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from .forms import UserForm
+from .forms import UserForm, PollForm, AnswerForm
 
 def home(request):
     form = UserForm(request.POST or None)
@@ -82,3 +82,23 @@ def user_logout(request):
     logout(request)
 
     return HttpResponseRedirect('/')
+
+def voting(request):
+    form = PollForm(request.POST or None)
+    db_get_data = form.Meta.model.objects.all()
+
+    for cur in db_get_data:
+        for field in cur._meta.fields: # field is a django field
+            if field.name == 'question':
+                 print(field.name)
+
+    if form.is_valid():
+        save_it = form.save(commit=False)
+        save_it.save()
+        messages.success(request, "We will be in touch")
+        return HttpResponseRedirect('/thankyou/')
+
+    return render_to_response("voting.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+

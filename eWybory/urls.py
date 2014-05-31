@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^register/$', 'Poll.views.register', name='register'),
     url(r'^login/$', 'Poll.views.user_login', name='user_login'),
     url(r'^logout/$', 'Poll.views.user_logout', name='user_logout'),
-
+    url(r'^voting/$', 'Poll.views.voting', name='voting'),
     url(r'^admin/', include(admin.site.urls)),
 )
 
