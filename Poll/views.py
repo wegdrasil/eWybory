@@ -12,7 +12,7 @@ def home(request):
         messages.success(request, "We will be in touch")
         return HttpResponseRedirect('/thank-you/')
 
-    return render_to_response("user.html",
+    return render_to_response("home.html",
                               locals(),
                               context_instance=RequestContext(request))
 
