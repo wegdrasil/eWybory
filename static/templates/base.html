@@ -34,14 +34,19 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+            <li><a  href='{% url "home" %}'>Strona główna</a></li>
+          {% if user.is_authenticated %}
+
+          <li><a  href='{% url "user_logout" %}'>Wyloguj</a></li>
+
+          {% else %}
+          <li><a  href='{% url "user_login" %}'>Zaloguj</a></li>
+          <li><a  href='{% url "register" %}'>Zarejesruj</a></li>
+
+          {% endif %}
         </ul>
         <h3 class="text-muted">E-Wybory</h3>
       </div>
-
-
 
     <div class="row">
         {% if messages %}
