@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20da387b-ef4b-49bf-9688-8f45d772f619" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
-      <change type="MOVED" beforePath="C:\eWybory\static\templates\createpoll.html" afterPath="$PROJECT_DIR$/static/templates/result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Poll/admin.py" afterPath="$PROJECT_DIR$/Poll/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/home.html" afterPath="$PROJECT_DIR$/static/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Poll/models.py" afterPath="$PROJECT_DIR$/Poll/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eWybory/urls.py" afterPath="$PROJECT_DIR$/eWybory/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Poll/views.py" afterPath="$PROJECT_DIR$/Poll/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/static/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/static/js/ie8-responsive-file-warning.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/static/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/static/css/jumbotron-narrow.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eWybory.iws" />
@@ -35,7 +32,7 @@
       <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="6" selection-start="473" selection-end="473" vertical-scroll-proportion="0.5079086" vertical-offset="0" max-vertical-offset="569">
+            <state line="12" column="14" selection-start="324" selection-end="324" vertical-scroll-proportion="0.37226278" vertical-offset="0" max-vertical-offset="548">
               <folding />
             </state>
           </provider>
@@ -260,6 +257,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -591,7 +592,11 @@
       <created>1401547924329</created>
       <updated>1401547924329</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="User model from auth tool. Results view.">
+      <created>1401549732684</created>
+      <updated>1401549732684</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -604,7 +609,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2284041" sideWeight="0.66022545" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2284041" sideWeight="0.66022545" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -657,7 +662,8 @@
     <MESSAGE value="User &amp; first template." />
     <MESSAGE value="Datebase is accesible in admin" />
     <MESSAGE value="New layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="New layout" />
+    <MESSAGE value="User model from auth tool. Results view." />
+    <option name="LAST_COMMIT_MESSAGE" value="User model from auth tool. Results view." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -774,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="6" selection-start="473" selection-end="473" vertical-scroll-proportion="0.5079086" vertical-offset="0" max-vertical-offset="569">
+        <state line="12" column="14" selection-start="324" selection-end="324" vertical-scroll-proportion="0.37226278" vertical-offset="0" max-vertical-offset="548">
           <folding />
         </state>
       </provider>
