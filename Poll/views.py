@@ -1,21 +1,38 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.template import Context, loader
+from Poll.models import Poll
+from django.http import HttpResponse
 
-from .forms import UserForm, PollForm, AnswerForm
+from .forms import UserForm
 
 def home(request):
-    form = UserForm(request.POST or None)
+    context = RequestContext(request)
 
-    if form.is_valid():
-        save_it = form.save(commit=False)
-        save_it.save()
-        messages.success(request, "We will be in touch")
-        return HttpResponseRedirect('/thank-you/')
+    # Query the database for a list of ALL categories currently stored.
+    # Order the categories by no. likes in descending order.
+    # Retrieve the top 5 only - or all if less than 5.
+    # Place the list in our context_dict dictionary which will be passed to the template engine.
+    category_list = Poll.objects.order_by('-question')[:5]
+    context_dict = {'polles': category_list}
 
-    return render_to_response("home.html",
-                              locals(),
+    # Render the response and send it back!
+    return render_to_response('home.html',
+                              context_dict,
                               context_instance=RequestContext(request))
+    # if form.is_valid():
+    #     save_it = form.save(commit=False)
+    #     save_it.save()
+    #     messages.success(request, "We will be in touch")
+    #     return HttpResponseRedirect('/thank-you/')
+
+
+        # render_to_response("home.html",
+        #                       locals(),
+        #                       context_instance=RequestContext(request))
+
+
 
 def thankyou(request):
 
@@ -82,23 +99,3 @@ def user_logout(request):
     logout(request)
 
     return HttpResponseRedirect('/')
-
-def voting(request):
-    form = PollForm(request.POST or None)
-    db_get_data = form.Meta.model.objects.all()
-
-    for cur in db_get_data:
-        for field in cur._meta.fields: # field is a django field
-            if field.name == 'question':
-                 print(field.name)
-
-    if form.is_valid():
-        save_it = form.save(commit=False)
-        save_it.save()
-        messages.success(request, "We will be in touch")
-        return HttpResponseRedirect('/thankyou/')
-
-    return render_to_response("voting.html",
-                              locals(),
-                              context_instance=RequestContext(request))
-

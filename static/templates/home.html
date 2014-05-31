@@ -27,20 +27,19 @@
 {#</div>#}
 
      <img src="/static/images/Logo.jpg"/>
+        {% if polles %}
+            <ul>
+                {% for Poll in polles %}
+                <li>{{ Poll.question }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
 
-          {% if Poll %}
-        <ul>
-        {% for Poll in Poll %}
-          <li>{{ Poll.question }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No polls are available.</p>
-    {% endif %}
 
-    <div class="col-sm-6 col-sm-offset-1">
-        <a class='btn btn-primary btn-lg' href='{% url "voting" %}'>Głosuj</a>
-    <div></div>
+
+
 
 
 {% endblock %}
