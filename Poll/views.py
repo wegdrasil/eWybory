@@ -22,8 +22,8 @@ def thankyou(request):
                               locals(),
                               context_instance=RequestContext(request))
 
-def createpoll(request):
+def result(request):
 
-    return render_to_response("createpoll.html",
+    return render_to_response("result.html",
                               locals(),
                               context_instance=RequestContext(request))

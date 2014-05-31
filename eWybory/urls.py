@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'Poll.views.home', name='home'),
     url(r'^thank-you/$', 'Poll.views.thankyou', name='thankyou'),
-    url(r'^create-poll/$', 'Poll.views.createpoll', name='createpoll'),
+    url(r'^result/$', 'Poll.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),
 )
 

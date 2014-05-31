@@ -1,14 +1,14 @@
 from django.db import models
-
-class User(models.Model):
-    login = models.CharField(max_length=25, null=False, blank=False)
-    password = models.CharField(max_length=255, null=False, blank=False)
-    first_name = models.CharField(max_length=120, null=False, blank=False)
-    last_name = models.CharField(max_length=120, null=False, blank=False)
-    typ = models.IntegerField() #mozliwe ze wyjebiemy
-
-    def __str__(self):
-        return str(self.login)
+from django.contrib.auth.models import User
+#class User(models.Model):
+#    login = models.CharField(max_length=25, null=False, blank=False)
+#    password = models.CharField(max_length=255, null=False, blank=False)
+#    first_name = models.CharField(max_length=120, null=False, blank=False)
+#    last_name = models.CharField(max_length=120, null=False, blank=False)
+#    typ = models.IntegerField() #mozliwe ze wyjebiemy
+#
+#    def __str__(self):
+#        return str(self.login)
 
 class Poll(models.Model):
     question  = models.CharField(max_length=25, null=False, blank=False)
