@@ -27,29 +27,40 @@
 {#</div>#}
 {#jest#}
 
-
-
+{#{% len(polles)*300 %}#}
      <img src="/static/images/Logo.jpg"/>
         {% if polles %}
-        <table border="1" style="width:700px">
+        <table border="0" style="width:300px;height:300px">
                 {% for Poll in polles %}
-                <tr><td>
-                    {{ Poll.question }}</td>
-                    <td></td>
+                <tr>
+                <td background="/static/images/ceglak.jpg" onclick="window.location.href='{{ Poll.id }}/vote/'" style="cursor:pointer">
 
+
+                    <center>
+                    <font color="white" face="Wiggles">
+                       <b> {{ Poll.question }}
+
+
+
+
+
+                       </b>
+                    </font>
+                    </center>
+
+
+                </td>
                 </tr>
                 {% endfor %}
          </table>
         {% else %}
-            <strong>There are no categories present.</strong>
+            <strong>Brak wyborów w bazie danych.</strong>
         {% endif %}
 
 
 
 
-    <div class="col-sm-6 col-sm-offset-1">
-        <a class='btn btn-primary btn-lg' href='{% url "voting" %}'>Głosuj</a>
-    <div></div>
+
 
 
 

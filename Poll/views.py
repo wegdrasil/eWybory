@@ -34,7 +34,7 @@ def thankyou(request):
     return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
-def voting(request):
+def voting(request, Poll_id):
      #form = PollForm(request.POST or None)
      #db_get_data = form.Meta.model.objects.all()
      #
@@ -59,13 +59,13 @@ def voting(request):
 
     selected_poll = {}
     for i in p:
-        if i.id == 1:
+        if i.id == int(Poll_id):
             selected_poll = {'poll': i.question}
 
 
     selected_answers = []
     for i in a:
-        if i.poll_id == 1:
+        if i.poll_id == int(Poll_id):
             selected_answers.append(i)
 
     selected_poll.update({'answers': selected_answers})
