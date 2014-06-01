@@ -25,17 +25,26 @@
 {#    <div></div>#}
 
 {#</div>#}
+{#jest#}
+
+
 
      <img src="/static/images/Logo.jpg"/>
         {% if polles %}
-            <ul>
+        <table border="1" style="width:700px">
                 {% for Poll in polles %}
-                <li>{{ Poll.question }}</li>
+                <tr><td>
+                    {{ Poll.question }}</td>
+                    <td></td>
+
+                </tr>
                 {% endfor %}
-            </ul>
+         </table>
         {% else %}
             <strong>There are no categories present.</strong>
         {% endif %}
+
+
 
 
 

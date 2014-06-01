@@ -10,17 +10,12 @@ from .forms import UserForm
 def home(request):
     context = RequestContext(request)
 
-    # Query the database for a list of ALL categories currently stored.
-    # Order the categories by no. likes in descending order.
-    # Retrieve the top 5 only - or all if less than 5.
-    # Place the list in our context_dict dictionary which will be passed to the template engine.
+
     category_list = Poll.objects.order_by('-question')[:5]
     context_dict = {'polles': category_list}
 
     # Render the response and send it back!
-    return render_to_response('home.html',
-                              context_dict,
-                              context_instance=RequestContext(request))
+
     # if form.is_valid():
     #     save_it = form.save(commit=False)
     #     save_it.save()
@@ -28,15 +23,22 @@ def home(request):
     #     return HttpResponseRedirect('/thank-you/')
 
 
-        # render_to_response("home.html",
-        #                       locals(),
-        #                       context_instance=RequestContext(request))
-
+    return render_to_response('home.html',
+                              context_dict,
+                              context_instance=RequestContext(request))
+def fu():
+    pass
 
 
 def thankyou(request):
 
     return render_to_response("thankyou.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def voting(request):
+
+    return render_to_response("voting.html",
                               locals(),
                               context_instance=RequestContext(request))
 
