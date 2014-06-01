@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="20da387b-ef4b-49bf-9688-8f45d772f619" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/base.html" afterPath="$PROJECT_DIR$/static/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/home.html" afterPath="$PROJECT_DIR$/static/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/eWybory.iml" afterPath="$PROJECT_DIR$/.idea/eWybory.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/thankyou.html" afterPath="$PROJECT_DIR$/static/templates/thankyou.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Poll/views.py" afterPath="$PROJECT_DIR$/Poll/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/templates/voting.html" afterPath="$PROJECT_DIR$/static/templates/voting.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="eWybory.iws" />
@@ -23,6 +26,10 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DjangoConsoleOptions">
+    <option name="myUseModuleSdk" value="true" />
+    <option name="myModuleName" value="eWybory" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="eWybory" />
@@ -32,7 +39,7 @@
       <file leaf-file-name="forms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Poll/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="32" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="476">
+            <state line="11" column="32" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
@@ -41,7 +48,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Poll/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="14" selection-start="843" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="782">
+            <state line="14" column="28" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -50,10 +57,8 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Poll/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="578" selection-end="578" vertical-scroll-proportion="0.45333335" vertical-offset="0" max-vertical-offset="1836">
-              <folding>
-                <element signature="e#0#107#0" expanded="true" />
-              </folding>
+            <state line="6" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.2271715" vertical-offset="0" max-vertical-offset="2414">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,7 +66,7 @@
       <file leaf-file-name="voting.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="4" selection-start="369" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
+            <state line="35" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="-13.076923" vertical-offset="255" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -70,7 +75,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1496">
+            <state line="35" column="45" selection-start="1272" selection-end="1272" vertical-scroll-proportion="6.5384617" vertical-offset="765" max-vertical-offset="1496">
               <folding />
             </state>
           </provider>
@@ -79,7 +84,7 @@
       <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="629">
+            <state line="17" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="629">
               <folding />
             </state>
           </provider>
@@ -97,7 +102,7 @@
       <file leaf-file-name="result.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="15" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
+            <state line="19" column="14" selection-start="494" selection-end="494" vertical-scroll-proportion="-12.346154" vertical-offset="2" max-vertical-offset="425">
               <folding />
             </state>
           </provider>
@@ -106,8 +111,10 @@
       <file leaf-file-name="thankyou.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="15" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-              <folding />
+            <state line="10" column="14" selection-start="244" selection-end="244" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+              <folding>
+                <marker date="1401632596058" expanded="true" signature="131:229" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,7 +122,7 @@
       <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="46" selection-start="977" selection-end="977" vertical-scroll-proportion="-5.8076925" vertical-offset="410" max-vertical-offset="1003">
+            <state line="9" column="66" selection-start="254" selection-end="318" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1003">
               <folding />
             </state>
           </provider>
@@ -151,20 +158,19 @@
         <option value="$PROJECT_DIR$/static/templates/register.html" />
         <option value="$PROJECT_DIR$/eWybory/urls.py" />
         <option value="$PROJECT_DIR$/static/templates/result.html" />
-        <option value="$PROJECT_DIR$/static/templates/thankyou.html" />
-        <option value="$PROJECT_DIR$/static/templates/voting.html" />
         <option value="$PROJECT_DIR$/Poll/forms.py" />
         <option value="$PROJECT_DIR$/static/templates/base.html" />
         <option value="$PROJECT_DIR$/static/templates/home.html" />
+        <option value="$PROJECT_DIR$/static/templates/thankyou.html" />
         <option value="$PROJECT_DIR$/Poll/views.py" />
+        <option value="$PROJECT_DIR$/static/templates/voting.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1688" />
-    <option name="height" value="1028" />
+    <option name="width" value="1382" />
+    <option name="height" value="738" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -331,14 +337,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="162" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="162" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="166" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="D:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="C:/Python34/python.exe" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="162" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="841" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="161" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="155" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -350,14 +356,14 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
-      <console-settings />
+      <PyConsoleSettings />
     </option>
   </component>
   <component name="RecentsManager">
@@ -450,27 +456,7 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="eWybory" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -496,7 +482,27 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="eWybory" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -546,7 +552,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="eWybory.settings" />
       </envs>
-      <option name="SDK_HOME" value="D:/Python34/python.exe" />
+      <option name="SDK_HOME" value="C:/Python34/python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -635,7 +641,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1688" height="1028" extended-state="6" />
+    <frame x="-4" y="0" width="1382" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -643,20 +649,20 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16904762" sideWeight="0.63929147" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16837482" sideWeight="0.78512394" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993559" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21598272" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21487603" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -675,9 +681,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20669578" sideWeight="0.63929147" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35979512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35979512" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -704,233 +710,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Poll/views.py</url>
-          <line>89</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Poll/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="843" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="39" selection-start="843" selection-end="843" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1802">
-          <folding>
-            <element signature="e#0#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="369" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eWybory/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="10" selection-start="852" selection-end="852" vertical-scroll-proportion="0.0" vertical-offset="359" max-vertical-offset="986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="843" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="791" selection-end="791" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1802">
-          <folding>
-            <element signature="e#0#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="369" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="66" selection-start="1339" selection-end="1339" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eWybory/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="37" selection-start="968" selection-end="974" vertical-scroll-proportion="0.0" vertical-offset="121" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="32" selection-start="282" selection-end="282" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="843" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Poll/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2159">
-          <folding>
-            <element signature="e#0#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="369" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1381" selection-end="1381" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eWybory/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="55" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="18" selection-start="364" selection-end="364" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Poll/TODO">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="6" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204" />
@@ -948,9 +731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eWybory/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="33" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1768">
-          <folding />
-        </state>
+        <state line="37" column="33" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1768" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Poll/admin.py">
@@ -970,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="15" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eWybory/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="55" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
@@ -984,9 +758,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/result.html">
+    <entry file="file://$PROJECT_DIR$/static/templates/thankyou.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="15" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="425">
+        <state line="10" column="14" selection-start="244" selection-end="244" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="272">
+          <folding>
+            <marker date="1401632596058" expanded="true" signature="131:229" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="45" selection-start="1272" selection-end="1272" vertical-scroll-proportion="6.5384617" vertical-offset="765" max-vertical-offset="1496">
           <folding />
         </state>
       </provider>
@@ -1000,38 +783,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Poll/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="843" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="4" selection-start="369" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1379" selection-end="1379" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1496">
+        <state line="14" column="28" selection-start="636" selection-end="636" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="46" selection-start="977" selection-end="977" vertical-scroll-proportion="-5.8076925" vertical-offset="410" max-vertical-offset="1003">
+        <state line="9" column="66" selection-start="254" selection-end="318" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/voting.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="-13.076923" vertical-offset="255" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/templates/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="14" selection-start="494" selection-end="494" vertical-scroll-proportion="-12.346154" vertical-offset="2" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Poll/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="578" selection-end="578" vertical-scroll-proportion="0.45333335" vertical-offset="0" max-vertical-offset="1836">
-          <folding>
-            <element signature="e#0#107#0" expanded="true" />
-          </folding>
+        <state line="6" column="0" selection-start="328" selection-end="328" vertical-scroll-proportion="0.2271715" vertical-offset="0" max-vertical-offset="2414">
+          <folding />
         </state>
       </provider>
     </entry>

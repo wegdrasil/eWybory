@@ -2,10 +2,10 @@ from django.shortcuts import render, render_to_response, RequestContext, HttpRes
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.template import Context, loader
-from Poll.models import Poll
+from Poll.models import Poll, Answer, Vote
 from django.http import HttpResponse
 
-from .forms import UserForm
+from .forms import UserForm, PollForm
 
 def home(request):
     context = RequestContext(request)
@@ -26,8 +26,6 @@ def home(request):
     return render_to_response('home.html',
                               context_dict,
                               context_instance=RequestContext(request))
-def fu():
-    pass
 
 
 def thankyou(request):
@@ -35,12 +33,48 @@ def thankyou(request):
     return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
-
 def voting(request):
+     #form = PollForm(request.POST or None)
+     #db_get_data = form.Meta.model.objects.all()
+     #
+     #for cur in db_get_data:
+     #    for field in cur._meta.fields: # field is a django field
+     #        if field.name == 'question':
+     #             print(field.name)
+     #
+     #if form.is_valid():
+     #    save_it = form.save(commit=False)
+     #    save_it.save()
+     #    messages.success(request, "We will be in touch")
+     #    return HttpResponseRedirect('/thankyou/')
+
+    #foo = Poll.objects.order_by('-question')[:5]
+    #context_dict = {'polles': category_list}
+
+    #p = Poll.objects.order_by('question')#.first()
+
+    p = Poll.objects.all()
+    a = Answer.objects.all()
+
+    selected_poll = {}
+    for i in p:
+        if i.id == 1:
+            selected_poll = {'poll': i.question}
+
+
+    selected_answers = []
+    for i in a:
+        if i.poll_id == 1:
+            selected_answers.append(i)
+
+    selected_poll.update({'answers': selected_answers})
+
+    print()
+
 
     return render_to_response("voting.html",
-                              locals(),
-                              context_instance=RequestContext(request))
+                               selected_poll,
+                               context_instance=RequestContext(request))
 
 def result(request):
 
