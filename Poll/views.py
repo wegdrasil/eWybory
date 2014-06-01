@@ -1,5 +1,6 @@
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
+from django.utils import simplejson
 from django.contrib.auth import authenticate, login, logout
 from django.template import Context, loader
 from Poll.models import Poll, Answer, Vote
@@ -78,9 +79,14 @@ def voting(request):
 
 def result(request):
 
+    browser_stats = [["Chrome", 52.9], ["Firefox", 27.7], ["Opera", 1.6],
+                     ["Internet Explorer", 12.6], ["Safari", 4]]
+
+    json_list = simplejson.dumps(browser_stats)
+
     return render_to_response("result.html",
-                              locals(),
-                              context_instance=RequestContext(request))
+                                {'json_list': json_list},
+                               context_instance=RequestContext(request))
 
 def register(request):
     context = RequestContext(request)
