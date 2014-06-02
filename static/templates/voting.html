@@ -2,55 +2,21 @@
 
 {%  block content %}
 
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-7">
 
+        <form method='POST' action=''> {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' class='btn btn-primary btn-lg'>
+        </form>
 
-<div class="alert alert-success">
-  <p>Pytanie</p>
-</div>
+        </div>
+    </div>
 
-    {% if poll %}
+    <h1>Tutaj oddajesz swój głos na skurwysyna {{ Poll_id }}</h1>
 
-        {{ poll }}
-
-    {% else %}
-        <strong>There is no selected poll.</strong>
-    {% endif %}
-
-
-{#    <h1>Opcje: </h1>#}
-{#    {% if answers %}#}
-{#        {% for Answer in answers %}#}
-{#            <div class="checkbox">#}
-{#                <label>#}
-{#                  <input type="checkbox"> {{ Answer.first_name}} {{ Answer.last_name}}#}
-{#                </label>#}
-{#            </div>#}
-{#        {% endfor %}#}
-{#    {% else %}#}
-{#        <strong>There are no answers present.</strong>#}
-{#    {% endif %}#}
-{##}
-{#    <div class="col-sm-6 col-sm-offset-1">#}
-{#        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos?</a>#}
-{#    <div></div>#}
-
-<h1>{{ poll.question }}</h1>
-
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-<form action="/vote/" method="post">{% csrf_token %}
-{% for Answer in answers %}
-    <input type="radio" name="Answer"
-        id="choice{{ forloop.counter }}"
-        value={{ Answer.id }}
-    />
-    <label for="choice{{ forloop.counter }}">{{ Answer.last_name }} {{ Answer.first_name }}</label><br />
-{% endfor %}
-<input type="submit" value="Głosuj" />
-</form>
-
-
-
-
+    <div class="col-sm-6 col-sm-offset-1">
+        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos?</a>
+    <div></div>
 
 {% endblock %}
