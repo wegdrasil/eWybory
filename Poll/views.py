@@ -53,29 +53,33 @@ def voting(request, Poll_id):
     #context_dict = {'polles': category_list}
 
     #p = Poll.objects.order_by('question')#.first()
+    if not request.user.is_authenticated():
+        return render_to_response("badlogin.html",
+                                   locals(),
+                                   context_instance=RequestContext(request))
+    else:
+        p = Poll.objects.all()
+        a = Answer.objects.all()
 
-    p = Poll.objects.all()
-    a = Answer.objects.all()
-
-    selected_poll = {}
-    for i in p:
-        if i.id == int(Poll_id):
-            selected_poll = {'poll': i.question}
-
-
-    selected_answers = []
-    for i in a:
-        if i.poll_id == int(Poll_id):
-            selected_answers.append(i)
-
-    selected_poll.update({'answers': selected_answers})
-
-    print()
+        selected_poll = {}
+        for i in p:
+            if i.id == int(Poll_id):
+                selected_poll = {'poll': i.question}
 
 
-    return render_to_response("voting.html",
-                               selected_poll,
-                               context_instance=RequestContext(request))
+        selected_answers = []
+        for i in a:
+            if i.poll_id == int(Poll_id):
+                selected_answers.append(i)
+
+        selected_poll.update({'answers': selected_answers})
+
+        print()
+
+
+        return render_to_response("voting.html",
+                                   selected_poll,
+                                   context_instance=RequestContext(request))
 
 def result(request):
 

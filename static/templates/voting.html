@@ -3,21 +3,16 @@
 {%  block content %}
 
 
-
-<div class="alert alert-success">
-  <p>Pytanie</p>
-</div>
-
     {% if poll %}
-
-        {{ poll }}
-
+        <blockquote>
+            {{ poll }}
+        </blockquote>
     {% else %}
         <strong>There is no selected poll.</strong>
     {% endif %}
 
 
-    <h1>Opcje: </h1>
+    <h3>Kandydaci </h3>
     {% if answers %}
         {% for Answer in answers %}
             <div class="checkbox">
@@ -30,8 +25,8 @@
         <strong>There are no answers present.</strong>
     {% endif %}
 
-    <div class="col-sm-6 col-sm-offset-1">
-        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos?</a>
+    <div class="col-sm-6 col-sm-offset-4">
+        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos</a>
     <div></div>
 
 
