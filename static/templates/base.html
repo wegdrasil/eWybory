@@ -36,7 +36,7 @@
         <ul class="nav nav-pills pull-right">
           <li><a  href='{% url "home" %}'>Strona główna</a></li>
           {% if user.is_authenticated %}
-
+          <li><a  href='{% url "home" %}'>{{ user }}</a></li>
           <li><a  href='{% url "user_logout" %}'>Wyloguj</a></li>
 
           {% else %}
@@ -66,9 +66,7 @@
 
 
 
-      <div class="footer">
-        <p>&copy; Company 2014</p>
-      </div>
+
 
     </div> <!-- /container -->
 
