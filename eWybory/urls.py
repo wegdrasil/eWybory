@@ -9,7 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'Poll.views.home', name='home'),
-    url(r'^thank-you/$', 'Poll.views.thankyou', name='thankyou'),
+    url(r'^vote/$', 'Poll.views.thankyou', name='thankyou'),
     url(r'^result/$', 'Poll.views.result', name='result'),
     url(r'^register/$', 'Poll.views.register', name='register'),
     url(r'^login/$', 'Poll.views.user_login', name='user_login'),

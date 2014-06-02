@@ -31,6 +31,31 @@ def home(request):
 
 def thankyou(request):
 
+
+    # if request.method == 'POST':
+    #     username = request.POST['username']
+    #     password = request.POST['password']
+    # p = get_object_or_404(Poll, pk=poll_id)
+    try:
+        selected_choice =pk=request.POST['Answer']
+    except (KeyError):
+        # Pokaz ponownie formularz do glosowania.
+         return render_to_response("thankyou.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+    else:
+        # selected_choice.votes += 1
+        # selected_choice.save()
+        # Zawsze zwróć HttpResponseRedirect po udanym obsłużeniu danych z POST.
+        # To zapewnia, że dane nie zostaną wysłane dwa razy, jeżeli użytkownik
+        # kliknie w przeglądarce przycisk Wstecz .
+         return render_to_response("thankyou.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+
+
+
     return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
@@ -59,13 +84,13 @@ def voting(request, Poll_id):
 
     selected_poll = {}
     for i in p:
-        if i.id == int(Poll_id):
+        if i.id == 1:
             selected_poll = {'poll': i.question}
 
 
     selected_answers = []
     for i in a:
-        if i.poll_id == int(Poll_id):
+        if i.poll_id == 1:
             selected_answers.append(i)
 
     selected_poll.update({'answers': selected_answers})
