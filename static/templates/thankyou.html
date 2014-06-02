@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
 
 {%  block content %}
+<div class="row">
+   {% if messages %}
+    <div class="col-sm-6 col-sm-offset-3">
 
-    <div class="alert alert-success">
-      <p class="text-center">Dziękujemy za oddanie głosu.</p>
-    </div>
+            {% for message in messages %}
+                <p{% if message.tags == "error" %}    class="alert alert-danger"
+                  {% elif message.tags == "success"%} class="alert alert-success"
+                  {% endif %}>{{ message }}</p>
+            {% endfor %}
+        </div>
+   {% endif %}
+</div>
 
-    <h1>{{  selected_choice }}</h1>
     <div class="col-sm-6 col-sm-offset-5">
         <a class='btn btn-primary btn-lg' href='{% url "result" %}'>Wyniki</a>
     <div></div>
-
-
 {% endblock %}

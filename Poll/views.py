@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.utils import simplejson
 from django.contrib.auth import authenticate, login, logout
 from django.template import Context, loader
-from Poll.models import Poll, Answer, Vote
+from Poll.models import Poll, Answer, Vote, User
 from django.http import HttpResponse
 
 from .forms import UserForm, PollForm
@@ -37,7 +37,23 @@ def thankyou(request):
     #     password = request.POST['password']
     # p = get_object_or_404(Poll, pk=poll_id)
     try:
-        selected_choice =pk=request.POST['Answer']
+        selected_choice = pk = request.POST['Answer']
+
+        if Vote.objects.filter(pk=request.user.id).exists():
+            messages.error(request, "Przecież już głosowałeś!")
+
+        else:
+            a = Answer.objects.get(id=selected_choice)
+            p = a.poll
+
+            a.n_o_votes += 1
+            a.save()
+            no = a.n_o_votes
+
+            v = Vote(poll=p, answer=a, user=request.user)
+            v.save()
+            messages.success(request, "Dziękujemy za oddanie głosu")
+
     except (KeyError):
         # Pokaz ponownie formularz do glosowania.
          return render_to_response("thankyou.html",
@@ -50,13 +66,6 @@ def thankyou(request):
         # To zapewnia, że dane nie zostaną wysłane dwa razy, jeżeli użytkownik
         # kliknie w przeglądarce przycisk Wstecz .
          return render_to_response("thankyou.html",
-                              locals(),
-                              context_instance=RequestContext(request))
-
-
-
-
-    return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
 
@@ -109,10 +118,14 @@ def voting(request, Poll_id):
 
 def result(request):
 
-    browser_stats = [["Chrome", 52.9], ["Firefox", 27.7], ["Opera", 1.6],
-                     ["Internet Explorer", 12.6], ["Safari", 4]]
+    poll = 1
 
-    json_list = simplejson.dumps(browser_stats)
+    results = []
+    for a in  Answer.objects.all():
+        if a.poll.id == poll:
+            results.append([a.first_name + " " + a.last_name, a.n_o_votes])
+
+    json_list = simplejson.dumps(results)
 
     return render_to_response("result.html",
                                 {'json_list': json_list},

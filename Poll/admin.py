@@ -1,18 +1,17 @@
 from django.contrib import admin
 
-from .models import User, Poll, Answer, Vote
+from .models import Poll, Answer, Vote
 
-#class UserAdmin(admin.ModelAdmin):
-#    class Meta:
-#        model = User
 
 class PollAdmin(admin.ModelAdmin):
     class Meta:
         model = Poll
 
+
 class AnswerAdmin(admin.ModelAdmin):
     class Meta:
         model = Answer
+
 
 class VoteAdmin(admin.ModelAdmin):
     class Meta:
