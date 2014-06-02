@@ -2,8 +2,12 @@
 
 {%  block content %}
 
+    <div class="alert alert-success">
+      <p class="text-center">Dziękujemy za oddanie głosu.</p>
+    </div>
+
     <h1>{{  selected_choice }}</h1>
-    <div class="col-sm-6 col-sm-offset-1">
+    <div class="col-sm-6 col-sm-offset-5">
         <a class='btn btn-primary btn-lg' href='{% url "result" %}'>Wyniki</a>
     <div></div>
 
