@@ -5,12 +5,13 @@
     {%  block content %}
 
     <h1>Wyniki głosowania</h1>
-
+    <h1> {{  poll }}</h1>
 
 
     <script src="//www.google.com/jsapi"></script>
     <script src="/static/js/chartkick.js"></script>
     <div id="chart-2" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div>
+
         <script>
             var list = {{json_list|safe}};
             new Chartkick.PieChart(document.getElementById("chart-2"), list, {});

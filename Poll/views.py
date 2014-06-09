@@ -44,11 +44,17 @@ def thankyou(request):
         selected_choice = pk = request.POST['Answer']
 
         if Vote.objects.filter(pk=request.user.id).exists():
+            a = Answer.objects.get(id=selected_choice)
+            p = a.poll
+            context_dict = {'id_poll': p.id}
             messages.error(request, "Przecież już głosowałeś!")
 
         else:
+
             a = Answer.objects.get(id=selected_choice)
             p = a.poll
+            context_dict = {'id_poll': p.id}
+
 
             a.n_o_votes += 1
             a.save()
@@ -70,7 +76,7 @@ def thankyou(request):
         # To zapewnia, że dane nie zostaną wysłane dwa razy, jeżeli użytkownik
         # kliknie w przeglądarce przycisk Wstecz .
          return render_to_response("thankyou.html",
-                              locals(),
+                              context_dict,
                               context_instance=RequestContext(request))
 
 def voting(request, Poll_id):
@@ -120,9 +126,9 @@ def voting(request, Poll_id):
                                    selected_poll,
                                    context_instance=RequestContext(request))
 
-def result(request):
+def result(request, Poll_id):
 
-    poll = 1
+    poll = Poll_id
 
     results = []
     for a in  Answer.objects.all():
@@ -132,7 +138,8 @@ def result(request):
     json_list = simplejson.dumps(results)
 
     return render_to_response("result.html",
-                                {'json_list': json_list},
+                              #  {'json_list': json_list},
+                               locals(),
                                context_instance=RequestContext(request))
 
 def register(request):
