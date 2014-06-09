@@ -2,9 +2,8 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="2613612759">
     <data-source source="LOCAL" name="Django default" uuid="67639aac-58ac-465c-800d-22f38c2280c3">
-      <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Documents and Settings\Predator\EWybory\eWybory\db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\eWybory2\eWybory\db.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>
