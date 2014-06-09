@@ -1,5 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
+
+class UserType(models.Model):
+    user = models.OneToOneField(User)
+
+    type = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.user.username
 
 class Poll(models.Model):
     question  = models.CharField(max_length=25, null=False, blank=False)
@@ -9,6 +18,9 @@ class Poll(models.Model):
 
     def __str__(self):
         return str(self.question)
+
+    def timespent(self):
+        return int((timezone.now()-self.date_start)/(self.date_end - self.date_start)*100)
 
 
 class Answer(models.Model):

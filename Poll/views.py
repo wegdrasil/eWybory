@@ -2,6 +2,8 @@ from django.shortcuts import render, render_to_response, RequestContext, HttpRes
 from django.contrib import messages
 from django.utils import simplejson
 from django.contrib.auth import authenticate, login, logout
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
 from django.template import Context, loader
 from Poll.models import Poll, Answer, Vote, User
 from django.http import HttpResponse
@@ -13,6 +15,8 @@ def home(request):
 
 
     category_list = Poll.objects.order_by('-question')[:5]
+
+
     context_dict = {'polles': category_list}
 
     # Render the response and send it back!
@@ -184,3 +188,31 @@ def user_logout(request):
     logout(request)
 
     return HttpResponseRedirect('/')
+
+def show_pdf(request):
+    response = HttpResponse(mimetype='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename=results.pdf'
+
+    pdf = canvas.Canvas(response)
+
+    pdf.drawString(100, 800, "Wyniki ankiety")
+    #a = Answer.objects.all()
+
+    poll = 1
+    #pdf.drawString(100, 800, str(a[0].first_name) + " " + str(a[0].last_name) + " " + str(a[0].n_o_votes))
+    #results = []
+    #for i in  range(len(a)):
+    #    if a[i].poll.id == poll:
+    #        pdf.drawString(100, 800 + (i*10), a.first_name + " " + a.last_name + " " + a.n_o_votes)
+
+    pdf.showPage()
+    pdf.save()
+    return response
+
+
+
+
+
+
+
+
