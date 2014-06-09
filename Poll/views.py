@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from Poll.models import Poll, Answer, Vote, User
 from django.http import HttpResponse
+from django.utils import timezone
 
 from .forms import UserForm, PollForm
 
@@ -34,27 +35,22 @@ def home(request):
 
 
 def thankyou(request):
-
-
     # if request.method == 'POST':
     #     username = request.POST['username']
     #     password = request.POST['password']
     # p = get_object_or_404(Poll, pk=poll_id)
-    try:
-        selected_choice = pk = request.POST['Answer']
+    selected_choice = pk = request.POST['Answer']
 
-        if Vote.objects.filter(pk=request.user.id).exists():
-            a = Answer.objects.get(id=selected_choice)
-            p = a.poll
-            context_dict = {'id_poll': p.id}
+    try:
+
+        a = Answer.objects.get(id=selected_choice)
+        p = a.poll
+        #context_dict = {'id_poll': p.id}
+
+        if Vote.objects.filter(user=request.user.id, poll=p).exists():
             messages.error(request, "Przecież już głosowałeś!")
 
         else:
-
-            a = Answer.objects.get(id=selected_choice)
-            p = a.poll
-            context_dict = {'id_poll': p.id}
-
 
             a.n_o_votes += 1
             a.save()
@@ -76,7 +72,7 @@ def thankyou(request):
         # To zapewnia, że dane nie zostaną wysłane dwa razy, jeżeli użytkownik
         # kliknie w przeglądarce przycisk Wstecz .
          return render_to_response("thankyou.html",
-                              context_dict,
+                              locals(),
                               context_instance=RequestContext(request))
 
 def voting(request, Poll_id):
@@ -98,10 +94,49 @@ def voting(request, Poll_id):
     #context_dict = {'polles': category_list}
 
     #p = Poll.objects.order_by('question')#.first()
+    p = Poll.objects.get(id=Poll_id)
+
     if not request.user.is_authenticated():
         return render_to_response("badlogin.html",
                                    locals(),
                                    context_instance=RequestContext(request))
+
+    elif p.date_end < timezone.now():
+        selected_poll = Poll_id
+
+        response = HttpResponse(mimetype='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename=results.pdf'
+
+        pdf = canvas.Canvas(response)
+        p = Poll.objects.filter(pk=selected_poll)
+
+        pdf.drawString(100, 800, "Wyniki ankiety: " + p[0].question)
+
+        a = Answer.objects.all()
+
+        v = Vote.objects.filter(poll=selected_poll)
+
+        peoplevoted = 0
+        allpeople = len(User.objects.all())
+
+        for u in User.objects.all():
+            peoplevoted += v.filter(user=u.id).count()
+
+        for i in  range(len(a)):
+
+            if a[i].poll.id == int(selected_poll):
+
+                pdf.drawString(100, 750 - (i*12), str(a[i].first_name) + " " + a[i].last_name + "  " + str(int(a[i].n_o_votes/len(v)*100)) + "%")
+
+        pdf.drawString(100, 500, "W ankiecie wzielo udzial " + str(peoplevoted) + " osob.")
+        pdf.drawString(100, 475, "Liczba uprawnionych do glosowania: " + str(allpeople) + ".")
+        pdf.drawString(100, 450, "Frekwencja wynosi " + str(int(peoplevoted/allpeople*100.0)) + " %.")
+
+
+        pdf.showPage()
+        pdf.save()
+        return response
+
     else:
         p = Poll.objects.all()
         a = Answer.objects.all()
@@ -131,14 +166,15 @@ def result(request, Poll_id):
     poll = Poll_id
 
     results = []
+    #objects.filter(user=request.user.id, poll=p)
     for a in  Answer.objects.all():
-        if a.poll.id == poll:
+        if a.poll.id == int(poll):
             results.append([a.first_name + " " + a.last_name, a.n_o_votes])
 
     json_list = simplejson.dumps(results)
 
     return render_to_response("result.html",
-                              #  {'json_list': json_list},
+                               # {'json_list': json_list},
                                locals(),
                                context_instance=RequestContext(request))
 
@@ -196,25 +232,6 @@ def user_logout(request):
 
     return HttpResponseRedirect('/')
 
-def show_pdf(request):
-    response = HttpResponse(mimetype='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename=results.pdf'
-
-    pdf = canvas.Canvas(response)
-
-    pdf.drawString(100, 800, "Wyniki ankiety")
-    #a = Answer.objects.all()
-
-    poll = 1
-    #pdf.drawString(100, 800, str(a[0].first_name) + " " + str(a[0].last_name) + " " + str(a[0].n_o_votes))
-    #results = []
-    #for i in  range(len(a)):
-    #    if a[i].poll.id == poll:
-    #        pdf.drawString(100, 800 + (i*10), a.first_name + " " + a.last_name + " " + a.n_o_votes)
-
-    pdf.showPage()
-    pdf.save()
-    return response
 
 
 
