@@ -5,7 +5,7 @@ from django.utils import timezone
 class UserType(models.Model):
     user = models.OneToOneField(User)
 
-    type = models.IntegerField(default=0)
+    type = models.IntegerField(default=0, null=False)
 
     def getType(self):
         return self.type

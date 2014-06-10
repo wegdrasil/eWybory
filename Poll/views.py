@@ -95,13 +95,13 @@ def voting(request, Poll_id):
 
     #p = Poll.objects.order_by('question')#.first()
     p = Poll.objects.get(id=Poll_id)
-    print("dusst " + str(request.user.usertype.getType()))
 
     if not request.user.is_authenticated():
         return render_to_response("badlogin.html",
                                    locals(),
                                    context_instance=RequestContext(request))
-    if p.type != request.user.usertype.getType():
+
+    elif p.type != request.user.usertype.getType():
 
         messages.error(request, "Nie masz uprawnień do głosowania w tej ankiecie!")
         return render_to_response("voting.html",
@@ -197,6 +197,9 @@ def register(request):
 
             user.set_password(user.password)
             user.save()
+
+            ut = UserType(user=user, type=0)
+            ut.save()
 
             registered = True
 

@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import User, Poll, Answer
+from .models import User, Poll, Answer, UserType
 
 
 class UserForm(forms.ModelForm):
