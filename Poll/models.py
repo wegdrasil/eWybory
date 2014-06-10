@@ -7,6 +7,9 @@ class UserType(models.Model):
 
     type = models.IntegerField(default=0)
 
+    def getType(self):
+        return self.type
+
     def __str__(self):
         return self.user.username
 

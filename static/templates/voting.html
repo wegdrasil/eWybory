@@ -4,17 +4,7 @@
 
 
 
-<div class="alert alert-success">
-  <p>Pytanie</p>
-</div>
 
-    {% if poll %}
-
-        {{ poll }}
-
-    {% else %}
-        <strong>There is no selected poll.</strong>
-    {% endif %}
 
 
 {#    <h1>Opcje: </h1>#}
@@ -36,7 +26,32 @@
 
 <h1>{{ poll.question }}</h1>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% if messages %}
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+            {% for message in messages %}
+                <p{% if message.tags == "error" %}    class="alert alert-danger"
+                    {% endif %}>{{ message }}</p>
+     {% endfor %}
+
+    <div class="col-sm-6 col-sm-offset-2">
+        <a class='btn btn-primary btn-lg' href='{% url "home" %}'>Strona główna</a>
+    <div></div>
+
+{% else %}
+
+<div class="alert alert-success">
+  <p>Pytanie</p>
+</div>
+
+    {% if poll %}
+
+        {{ poll }}
+
+    {% else %}
+        <strong>There is no selected poll.</strong>
+    {% endif %}
 
 <form action="/vote/" method="post">{% csrf_token %}
 {% for Answer in answers %}
@@ -50,7 +65,7 @@
     <input class='btn btn-primary btn-lg' type="submit" value="Głosuj" />
 <div></div>
 </form>
-
+{% endif %}
 
 
 {% endblock %}
