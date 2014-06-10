@@ -20,14 +20,6 @@ def home(request):
 
     context_dict = {'polles': category_list}
 
-    # Render the response and send it back!
-
-    # if form.is_valid():
-    #     save_it = form.save(commit=False)
-    #     save_it.save()
-    #     messages.success(request, "We will be in touch")
-    #     return HttpResponseRedirect('/thank-you/')
-
 
     return render_to_response('home.html',
                               context_dict,
@@ -35,13 +27,11 @@ def home(request):
 
 
 def thankyou(request):
-    # if request.method == 'POST':
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    # p = get_object_or_404(Poll, pk=poll_id)
 
     selected_choices_id = []
     selected_choices_id = request.POST.getlist('Answer')
+    for i in range(len(selected_choices_id)):
+        selected_choices_id[i] = str(selected_choices_id[i]).strip('/')
     print(selected_choices_id)
 
 
@@ -71,39 +61,16 @@ def thankyou(request):
             messages.success(request, "Dziękujemy za oddanie głosu")
 
     except (KeyError):
-        # Pokaz ponownie formularz do glosowania.
          return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
     else:
-        # selected_choice.votes += 1
-        # selected_choice.save()
-        # Zawsze zwróć HttpResponseRedirect po udanym obsłużeniu danych z POST.
-        # To zapewnia, że dane nie zostaną wysłane dwa razy, jeżeli użytkownik
-        # kliknie w przeglądarce przycisk Wstecz .
          return render_to_response("thankyou.html",
                               locals(),
                               context_instance=RequestContext(request))
 
 def voting(request, Poll_id):
-     #form = PollForm(request.POST or None)
-     #db_get_data = form.Meta.model.objects.all()
-     #
-     #for cur in db_get_data:
-     #    for field in cur._meta.fields: # field is a django field
-     #        if field.name == 'question':
-     #             print(field.name)
-     #
-     #if form.is_valid():
-     #    save_it = form.save(commit=False)
-     #    save_it.save()
-     #    messages.success(request, "We will be in touch")
-     #    return HttpResponseRedirect('/thankyou/')
 
-    #foo = Poll.objects.order_by('-question')[:5]
-    #context_dict = {'polles': category_list}
-
-    #p = Poll.objects.order_by('question')#.first()
     p = Poll.objects.get(id=Poll_id)
 
     if not request.user.is_authenticated():
@@ -119,7 +86,6 @@ def voting(request, Poll_id):
                            context_instance=RequestContext(request))
 
     elif p.date_end < timezone.now():
-        # UserType.type    Poll.type
 
         selected_poll = Poll_id
 
@@ -163,7 +129,7 @@ def voting(request, Poll_id):
         selected_poll = {}
         for i in p:
             if i.id == int(Poll_id):
-                selected_poll = {'poll': i.question}
+                selected_poll = {'poll': i}
 
 
         selected_answers = []
@@ -185,7 +151,6 @@ def result(request, Poll_id):
     poll = Poll_id
 
     results = []
-    #objects.filter(user=request.user.id, poll=p)
     for a in  Answer.objects.all():
         if a.poll.id == int(poll):
             results.append([a.first_name + " " + a.last_name, a.n_o_votes])

@@ -3,29 +3,6 @@
 {%  block content %}
 
 
-
-
-
-
-{#    <h1>Opcje: </h1>#}
-{#    {% if answers %}#}
-{#        {% for Answer in answers %}#}
-{#            <div class="checkbox">#}
-{#                <label>#}
-{#                  <input type="checkbox"> {{ Answer.first_name}} {{ Answer.last_name}}#}
-{#                </label>#}
-{#            </div>#}
-{#        {% endfor %}#}
-{#    {% else %}#}
-{#        <strong>There are no answers present.</strong>#}
-{#    {% endif %}#}
-{##}
-{#    <div class="col-sm-6 col-sm-offset-1">#}
-{#        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos?</a>#}
-{#    <div></div>#}
-
-<h1>{{ poll.question }}</h1>
-
 {% if messages %}
 
     <div class="col-sm-6 col-sm-offset-3">
@@ -47,7 +24,7 @@
 
     {% if poll %}
 
-        {{ poll }}
+<h1>{{ poll.question }}</h1>
 
     {% else %}
         <strong>There is no selected poll.</strong>
@@ -55,10 +32,12 @@
 
 <form action="/vote/" method="post">{% csrf_token %}
 {% for Answer in answers %}
-    <input type="checkbox" name="Answer"
-        id="choice{{ forloop.counter }}"
-        value={{ Answer.id }}
-    />
+    {% if poll.type > 3 %}
+    <input type="checkbox" name="Answer" id="choice{{ forloop.counter }}" value={{ Answer.id }}/>
+    {% else %}
+    <input type="radio" name="Answer" id="choice{{ forloop.counter }}" value={{ Answer.id }}/>
+    {% endif %}
+
     <label for="choice{{ forloop.counter }}">{{ Answer.last_name }} {{ Answer.first_name }}</label><br />
 {% endfor %}
 <div class="col-sm-6 col-sm-offset-5">
@@ -69,37 +48,3 @@
 
 
 {% endblock %}
-
-{#{% extends 'base.html' %}#}
-{##}
-{#{%  block content %}#}
-{##}
-{##}
-{#    {% if poll %}#}
-{#        <blockquote>#}
-{#            {{ poll }}#}
-{#        </blockquote>#}
-{#    {% else %}#}
-{#        <strong>There is no selected poll.</strong>#}
-{#    {% endif %}#}
-{##}
-{##}
-{#    <h3>Kandydaci </h3>#}
-{#    {% if answers %}#}
-{#        {% for Answer in answers %}#}
-{#            <div class="checkbox">#}
-{#                <label>#}
-{#                  <input type="checkbox"> {{ Answer.first_name}} {{ Answer.last_name}}#}
-{#                </label>#}
-{#            </div>#}
-{#        {% endfor %}#}
-{#    {% else %}#}
-{#        <strong>There are no answers present.</strong>#}
-{#    {% endif %}#}
-{##}
-{#    <div class="col-sm-6 col-sm-offset-4">#}
-{#        <a class='btn btn-primary btn-lg' href='{% url "thankyou" %}'>Zatwierdź głos</a>#}
-{#    <div></div>#}
-
-
-
