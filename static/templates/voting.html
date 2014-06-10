@@ -55,7 +55,7 @@
 
 <form action="/vote/" method="post">{% csrf_token %}
 {% for Answer in answers %}
-    <input type="radio" name="Answer"
+    <input type="checkbox" name="Answer"
         id="choice{{ forloop.counter }}"
         value={{ Answer.id }}
     />

@@ -39,25 +39,35 @@ def thankyou(request):
     #     username = request.POST['username']
     #     password = request.POST['password']
     # p = get_object_or_404(Poll, pk=poll_id)
-    selected_choice = pk = request.POST['Answer']
+
+    selected_choices_id = []
+    selected_choices_id = request.POST.getlist('Answer')
+    print(selected_choices_id)
+
 
     try:
 
-        a = Answer.objects.get(id=selected_choice)
-        p = a.poll
-        #context_dict = {'id_poll': p.id}
+        p = Answer.objects.get(id=selected_choices_id[0]).poll
+
+        answers = []
+        for i in range(len(selected_choices_id)):
+            answers.append(Answer.objects.filter(pk=selected_choices_id[i])[0])
+
+        print(answers)
 
         if Vote.objects.filter(user=request.user.id, poll=p).exists():
             messages.error(request, "Przecież już głosowałeś!")
 
         else:
+            for a in answers:
+                print(a)
+                a.n_o_votes += 1
+                a.save()
+                no = a.n_o_votes
 
-            a.n_o_votes += 1
-            a.save()
-            no = a.n_o_votes
+                v = Vote(poll=p, answer=a, user=request.user)
+                v.save()
 
-            v = Vote(poll=p, answer=a, user=request.user)
-            v.save()
             messages.success(request, "Dziękujemy za oddanie głosu")
 
     except (KeyError):
@@ -101,7 +111,7 @@ def voting(request, Poll_id):
                                    locals(),
                                    context_instance=RequestContext(request))
 
-    elif p.type != request.user.usertype.getType():
+    elif p.type != request.user.usertype.getType() or request.user.usertype.getType() == 0:
 
         messages.error(request, "Nie masz uprawnień do głosowania w tej ankiecie!")
         return render_to_response("voting.html",
@@ -109,6 +119,8 @@ def voting(request, Poll_id):
                            context_instance=RequestContext(request))
 
     elif p.date_end < timezone.now():
+        # UserType.type    Poll.type
+
         selected_poll = Poll_id
 
         response = HttpResponse(mimetype='application/pdf')
@@ -124,7 +136,7 @@ def voting(request, Poll_id):
         v = Vote.objects.filter(poll=selected_poll)
 
         peoplevoted = 0
-        allpeople = len(User.objects.all())
+        allpeople = len(UserType.objects.filter(type=p[0].type))
 
         for u in User.objects.all():
             peoplevoted += v.filter(user=u.id).count()
