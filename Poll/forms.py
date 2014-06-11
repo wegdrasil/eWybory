@@ -9,7 +9,7 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
 
-        fields = ('first_name', 'last_name', 'username', 'email', 'password')
+        fields = ('first_name', 'last_name', 'username', 'password')
 
 
 class PollForm(forms.ModelForm):
